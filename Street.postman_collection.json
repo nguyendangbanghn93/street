@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "bd134778-814f-4210-844c-852931440f43",
+		"name": "Street",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "streets",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Phạm Ngọc Thạch\",\n    \"founding\":1622647544761,\n    \"description\":\"Con đường Lịch sử\",\n    \"status\":1,\n    \"districtId\":5,\n    \"districtName\":\"Đống Đa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/v1/streets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"v1",
+								"streets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/v1/streets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"v1",
+								"streets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/v1/streets/search?streetName=nguyễn&districtId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"v1",
+								"streets",
+								"search"
+							],
+							"query": [
+								{
+									"key": "streetName",
+									"value": "nguyễn"
+								},
+								{
+									"key": "districtId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/seed/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"seed",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
