@@ -12,6 +12,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @NoArgsConstructor
@@ -40,6 +41,7 @@ public class District {
         DistrictDTO districtDTO = new DistrictDTO();
         districtDTO.setId(this.id);
         districtDTO.setName(this.name);
+        districtDTO.setStreets(this.streets.stream().map(x->x.toStreetDTO()).collect(Collectors.toList()));
         return districtDTO;
     }
 }
